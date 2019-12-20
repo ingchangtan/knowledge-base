@@ -136,3 +136,80 @@ List the published articles by id
     }
 ]
 ```
+
+
+### GET /articles
+List all the articles, it can be search or sorted
+
+**Query Params**
+
+**Sample Response** 
+```
+[
+    {
+        "article_id": KB0001,
+        "Title": "Hello World",
+        "knowledge_base": "IT", 
+        "State" : "Published", 
+        "Product": "Windows 7", 
+        "user_id": ooo1
+    }
+]
+```
+
+| GET | /acticles/state={state} | show by state
+
+List articles with state
+
+**Query Params**
+`State` - String, with search state - 'Published, Draft"
+
+**Sample Response** 
+```
+[
+    {
+        "article_id": KB0001,
+        "Title": "Hello World",
+        "knowledge_base": "IT", 
+        "State" : "Published", 
+        "Product": "Windows 7", 
+        "user_id": ooo1
+    }
+]
+```
+
+| GET | /acticles/product={product} | show by product
+
+List articles with state
+
+**Query Params**
+`Product` - String, with search 'Product"
+
+**Sample Response** 
+```
+[
+    {
+        "article_id": KB0001,
+        "Title": "Hello World",
+        "knowledge_base": "IT", 
+        "State" : "Published", 
+        "Product": "Windows 7", 
+        "user_id": ooo1
+    }
+]
+```
+
+
+| method | path | action |
+|---|---|---|
+| POST | /articles | create |
+| PUT | /articles/{id} | edit |
+| DELETE | /articles/{id} | delete |
+| GET | /acticles | show all
+| GET | /acticles/state={state} | show by state
+| GET | /acticles/product={product} | show by product
+| GET | /acticles/user={user_id} | show by author
+| GET | /acticles/title={title} | show by title
+| GET | /articles/{id} | show
+| GET | /acticles/published | show all published KB
+| GET | /acticles/published/{id} | show published KB id  
