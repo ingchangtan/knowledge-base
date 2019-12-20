@@ -6,9 +6,11 @@ createConnection().then(async connection => {
 
     console.log("Inserting a new user into the database...");
     const user = new User();
+    user.user_name = "Timber_Saw";
+    user.email_address = "Timber_Saw@gmail.com";
     user.firstName = "Timber";
     user.lastName = "Saw";
-    user.age = 25;
+    user.role= "KB Admin";
     await connection.manager.save(user);
     console.log("Saved a new user with id: " + user.id);
 
