@@ -213,3 +213,70 @@ List articles with state
 | GET | /articles/{id} | show
 | GET | /acticles/published | show all published KB
 | GET | /acticles/published/{id} | show published KB id  
+
+
+### Post /articles
+Create new articles
+
+**Query Params**
+
+`title` - string
+`knowlwdge_base` - string
+`product` - string
+`content` - string 
+
+**Sample Response** 
+
+````
+[
+    {
+        "title": "Order Missing",
+        "knowlwdge_base": "IT",
+        "product": "Delta"
+        "Content": "Order not found in Delta"
+    }
+]
+````
+
+### Put /articles/{id}
+edit or update the current article based on the specific article id 
+
+**Query Params**
+`id` number
+`title` - string
+`knowlwdge_base` - string
+`product` - string
+`content` - string 
+
+**Sample Response** 
+
+````
+[
+    {
+        "id": 123
+        "title": "Order Missing",
+        "knowlwdge_base": "IT",
+        "product": "Delta"
+        "Content": "Order missing in Delta, Please follow below steps to apply workaround."
+    }
+]
+````
+
+### Delete /articles/{id} 
+delete the articles
+
+**Query Params**
+`id` number
+`message` string
+
+**Sample Response** 
+
+````
+[
+    {
+        "id": 123
+        "Message" : "Article is deleted"
+     
+    }
+]
+````
