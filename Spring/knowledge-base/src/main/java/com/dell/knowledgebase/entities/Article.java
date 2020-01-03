@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="knowledge_base")
+@Table(name="knowledge__base")
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +36,10 @@ public class Article {
     private int rating;
     @Column
     private String content;
+
+    @Column(updatable = false, insertable = false)
+    private int user_id;
+
 
 
     public Long getUser_id() {
