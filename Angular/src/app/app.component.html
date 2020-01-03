@@ -15,17 +15,17 @@ body {
 
 /* Style the header */
 header {
-  background-color: #666;
+  background-color: rgb(8, 8, 8);
   padding: 5px;
   text-align: center;
   font-size: 10px;
-  color: white;
+  color: rgb(108, 252, 13);
 }
 
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 30%;
+  width: 15%;
   height: 500px; /* only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
@@ -40,7 +40,7 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
+  width: 85%;
   background-color: #f1f1f1;
   height: 500px; /* only for demonstration, should be removed */
   font-size: 12px;
@@ -56,8 +56,8 @@ section:after {
 
 /* Style the footer */
 footer {
-  background-color: #777;
-  padding: 10px;
+  background-color: rgb(8, 8, 8);
+  padding: 5px;
   text-align: center;
   color: white;
 }
@@ -84,7 +84,15 @@ footer {
 <section>
   <nav>
     <ul>
-      <li><a href="#">Create New</a></li>
+      <li><a href="#" >Create New</a>
+      <a href="some_page">This is a regular link</a>
+      <form method="post" action="some_page" class="inline">
+  <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">
+    This is a link that sends a POST request
+  </button>
+</li>
+</form>
 
       <li><a href="#">Draft Review</a></li>
       <li><a href="#">Published Article</a></li>
@@ -113,7 +121,7 @@ footer {
             <option value="novora">Novora R12</option>
           </select>
         <br>
-
+        <br>
         Title: <input type="text" name="title" style="width:50%" ><br> 
         <br>
         Description: <input type="text" name="description" style="width:50%" ><br> 
