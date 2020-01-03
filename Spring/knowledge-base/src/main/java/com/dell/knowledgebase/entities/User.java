@@ -8,16 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "user_id")
+    private Long userId;
 
-    @Column
-    private String user_name;
-    @Column
-    private String email_address;
+    @Column(name = "user_name")
+    private String userName;
+    @Column(name = "email_address")
+    private String emailAddress;
     @Column
     private String firstName;
     @Column
@@ -26,28 +27,29 @@ public class User {
     private String role;
 
 
-    public Long getId() {
-        return this.id;
+    public Long getUserId() {
+        return this.userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getUser_name() {
-        return this.user_name;
+
+    public String getUserName() {
+        return this.userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getEmail_address() {
-        return this.email_address;
+    public String getEmailAddress() {
+        return this.emailAddress;
     }
 
-    public void setEmail_address(String email_address) {
-        this.email_address = email_address;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getFirstName() {

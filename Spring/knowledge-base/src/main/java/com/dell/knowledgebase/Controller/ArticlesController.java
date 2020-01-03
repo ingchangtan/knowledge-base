@@ -22,11 +22,12 @@ public class ArticlesController {
 
     @PostMapping(value="/articles")
     public Article create(@RequestBody Article article) {
-   System.out.println(); 
+
         User user = userRepo.findById(article.getUser_id()).orElse(null);
         if (user != null) {
             article.setUser(user);
         }
+        
         articleRepo.save(article);
         return article;
     }
