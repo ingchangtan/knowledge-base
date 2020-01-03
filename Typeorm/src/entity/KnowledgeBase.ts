@@ -1,8 +1,8 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
-import { User } from "./User";
+import { Users } from "./Users";
 
 @Entity()
-export class Knowledge_Base {
+export class KnowledgeBase {
 
     @PrimaryGeneratedColumn()
     article_id: number;
@@ -37,9 +37,9 @@ export class Knowledge_Base {
     @Column()
     content: string;
 
-    @ManyToOne(type => User)
+    @ManyToOne(type => Users)
     @JoinColumn({ name: 'user_id' })
-    user: User
+    users: Users
 
 
 }

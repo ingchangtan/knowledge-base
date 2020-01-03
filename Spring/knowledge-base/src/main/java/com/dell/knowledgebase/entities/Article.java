@@ -14,42 +14,57 @@ import javax.persistence.Table;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int article_id;
+    private Long article_id;
 
     @Column
     private String title;
-    @Column
-    private String knowledge_base;
+    @Column(name = "knowledge_base")
+    private String knowledgeBase;
     @Column
     private String state;
     @Column
     private String product;
-    @Column
-    private String created_date;
-    @Column
-    private int modified_by;
-    @Column
-    private String modified_date;
-    @Column
-    private String published_date;
+    @Column(name = "created_date")
+    private String createdDate;
+    @Column(name = "modified_by")
+    private int modifiedBy;
+    @Column(name = "modified_date")
+    private String modifiedDate;
+    @Column(name = "published_date")
+    private String publishedDate;
     @Column
     private int rating;
     @Column
     private String content;
+
     @Column(updatable = false, insertable = false)
     private int user_id;
 
+
+
+    public Long getUser_id() {
+        return this.user_id;
+    }
+
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
+    }
+   
+
+
+    @Column(insertable = false, updatable = false)
+    private Long user_id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
 
-    public int getArticle_id() {
+    public Long getArticle_id() {
         return this.article_id;
     }
 
-    public void setArticle_id(int article_id) {
+    public void setArticle_id(Long article_id) {
         this.article_id = article_id;
     }
 
@@ -61,12 +76,12 @@ public class Article {
         this.title = title;
     }
 
-    public String getKnowledge_base() {
-        return this.knowledge_base;
+    public String getKnowledgeBase() {
+        return this.knowledgeBase;
     }
 
-    public void setKnowledge_base(String knowledge_base) {
-        this.knowledge_base = knowledge_base;
+    public void setKnowledgeBase(String knowledgeBase) {
+        this.knowledgeBase = knowledgeBase;
     }
 
     public String getState() {
@@ -85,36 +100,36 @@ public class Article {
         this.product = product;
     }
 
-    public String getCreated_date() {
-        return this.created_date;
+    public String getCreatedDate() {
+        return this.createdDate;
     }
 
-    public void setCreated_date(String created_date) {
-        this.created_date = created_date;
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public int getModified_by() {
-        return this.modified_by;
+    public int getModifiedBy() {
+        return this.modifiedBy;
     }
 
-    public void setModified_by(int modified_by) {
-        this.modified_by = modified_by;
+    public void setModifiedBy(int modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
 
-    public String getModified_date() {
-        return this.modified_date;
+    public String getModifiedDate() {
+        return this.modifiedDate;
     }
 
-    public void setModified_date(String modified_date) {
-        this.modified_date = modified_date;
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
-    public String getPublished_date() {
-        return this.published_date;
+    public String getPublishedDate() {
+        return this.publishedDate;
     }
 
-    public void setPublished_date(String published_date) {
-        this.published_date = published_date;
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
     }
 
     public int getRating() {
@@ -133,13 +148,7 @@ public class Article {
         this.content = content;
     }
 
-    public int getUser_id() {
-        return this.user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
+   
 
     public User getUser() {
         return this.user;
