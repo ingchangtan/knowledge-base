@@ -17,15 +17,15 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
     public List<Article> findByTitleEndsWith(String title);    
     public List<Article> findByTitleContains(String title);
     public List<Article> findByTitleStartingWithAndTitleEndsWithAndTitleContains(String starts, String ends, String match);
-    @Query("SELECT p FROM knowledge__base p WHERE p.title LIKE :title%")
+    @Query("SELECT p FROM knowledge_base p WHERE p.title LIKE :title%")
     public List<Article> searchByTitleStartingWith(@Param("title") String title);
 
-    @Query("SELECT p FROM knowledge__base p WHERE p.title LIKE %:title")
+    @Query("SELECT p FROM knowledge_base p WHERE p.title LIKE %:title")
     public List<Article> searchByTitleEndsWith(@Param("title")String title);    
 
-    @Query("SELECT p FROM knowledge__base p WHERE p.title LIKE %:title%")
+    @Query("SELECT p FROM knowledge_base p WHERE p.title LIKE %:title%")
     public List<Article> searchByTitleContains(@Param("title")String title);
 
-    @Query("SELECT p FROM knowledge__base p WHERE p.title LIKE :starts% AND p.title LIKE %:ends AND p.title LIKE %:match%")
+    @Query("SELECT p FROM knowledge_base p WHERE p.title LIKE :starts% AND p.title LIKE %:ends AND p.title LIKE %:match%")
     public List<Article> searchByTitleStartingWithAndTitleEndsWithAndTitleContains(@Param("starts")String starts, @Param("ends")String ends, @Param("match")String match);
 }
