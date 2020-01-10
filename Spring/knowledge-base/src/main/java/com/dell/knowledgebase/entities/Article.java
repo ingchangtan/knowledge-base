@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="knowledge__base")
+@Table(name="knowledge_base")
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +38,7 @@ public class Article {
     private String content;
 
     @Column(updatable = false, insertable = false)
-    private int user_id;
+    private long user_id;
 
 
 
@@ -51,9 +51,6 @@ public class Article {
     }
    
 
-
-    @Column(insertable = false, updatable = false)
-    private Long user_id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
